@@ -5,7 +5,7 @@ module.exports = (socket, roomId, socketId, username, id, channels, callback) =>
     try
     {
         const room = channels.get(roomId);
-        const user = new Player(id, socketId, username, 100, true, false, room._players.length, 0);
+        const user = new Player(id, socketId, username, 100, true, false, room._players.length, 0, {}, {});
 
         if (room === undefined)
         {

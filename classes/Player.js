@@ -1,6 +1,6 @@
 class Player
 {
-    constructor(id, socketId, username, lifePoints = 100, isConnected = false, isPlaying = false, playerIndex = -1, playerPostion)
+    constructor(id, socketId, username, lifePoints = 100, isConnected = false, isPlaying = false, playerIndex = -1, playerPostion, playerState, playerRotation)
     {
         this._id            = id;
         this._playerIndex   = playerIndex;
@@ -10,6 +10,8 @@ class Player
         this._isConnected   = isConnected;
         this._isPlaying     = isPlaying;
         this._position      = playerPostion;
+        this._playerState   = playerState;
+        this._playerRotation  = playerRotation;
     }
 
 
@@ -22,6 +24,9 @@ class Player
     get isConnected() { return this._isConnected; }
     get isPlaying() { return this._isPlaying; }
     get position() { return this._position; }
+    get playerState() { return this._playerState; }
+    get playerRotation() { return this._playerRotation; }
+    
 
     // Setters
     set id(value) { this._id = value; }
@@ -32,6 +37,8 @@ class Player
     set isConnected(value) { this._isConnected = value; }
     set isPlaying(value) { this._isPlaying = value; }
     set position(value) { this._position = value; }
+    set playerState(value) { this._playerState = value; }
+    set playerRotation(value) { this._playerRotation = value; }
 
 
 

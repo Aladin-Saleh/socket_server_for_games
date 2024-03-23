@@ -1,4 +1,4 @@
-module.exports = (io, roomId, playerPosition, socketId, channels) => 
+module.exports = (io, roomId, socketId, channels) => 
 {
     try
     {
@@ -8,8 +8,8 @@ module.exports = (io, roomId, playerPosition, socketId, channels) =>
         const room = channels.get(roomId.toString());
 
         // Mise à jour de la position du joueur en prenant le socket.id du joueur
-        const playerIndex = room._players.findIndex(player => player._socketId === socketId);
-        room._players[playerIndex]._position = playerPosition;
+        // const playerIndex = room._players.findIndex(player => player._socketId === socketId);
+        // room._players[playerIndex]._position = playerPosition;
         console.log(`[INFO] Room ${roomId} updated `, room);
         
         io.to(roomId.toString()).emit('channel_info', room);

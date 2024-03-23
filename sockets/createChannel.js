@@ -14,7 +14,7 @@ module.exports = (socket, socketId, username, id, channels, callback) =>
             throw new Error('Cannot create channel: Missing parameters.');
         }
         
-        const player = new Player(id, socketId, username, 100, true, false, room._players.length, 0);
+        const player = new Player(id, socketId, username, 100, true, false, room._players.length, 0, {}, {});
         
         room.addPlayer(player); // On ajoute le créateur de la room à la room
         room.setAdmin(player.socketId); // L'admin est le créateur de la room
